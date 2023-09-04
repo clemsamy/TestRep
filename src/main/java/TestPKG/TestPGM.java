@@ -6,12 +6,16 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
+
+//import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.BeforeMethod;
+
 
 public class TestPGM {
 
@@ -26,7 +30,7 @@ public class TestPGM {
 		//driver.get("https://www.freshworks.com/");
 		
 
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://www.freshworks.com/");
 
 	}
@@ -43,6 +47,13 @@ public class TestPGM {
 		System.out.println("running title test...");
 		System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "A fresh approach to customer engagement");
+	}
+	
+	@Test(priority = 3)
+	public void getFooterLinksTest() {
+		List<WebElement> footerLinksList = driver.findElements(By.cssSelector("ul.footer-nav li a"));
+		footerLinksList.forEach(ele -> System.out.println(ele.getText()));
+		assertEquals(footerLinksList.size(), 35);
 	}
 
 }
