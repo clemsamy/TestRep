@@ -4,17 +4,17 @@
 <suite name="Test automtion regression suite" verbose="1"
 	thread-count="3" parallel="tests">
 
-	<test name="Freshworks - Chrome test">
+	<test name="MvnSeleniumtest - Chrome test">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="WM.FreshWorksTest" />
+			<class name="TestPKG.TestPGM" />
 		</classes>
 	</test>
 
-	<test name="Freshworks - Firefox test">
-		<parameter name="browser" value="firefox" />
+	<test name="MvnSeleniumtest - Firefox test">
+		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="WM.FreshWorksTest" />
+			<class name="TestPKG.TestPGM" />
 		</classes>
 	</test>
 
